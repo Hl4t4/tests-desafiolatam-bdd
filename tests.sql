@@ -112,3 +112,29 @@ insert into company(nombre, direccion, edad, nomina) values('AirBnB', NULL, 100,
 insert into company(nombre, direccion, edad, nomina) values('AirBnB', 'direccion 4', NULL, 50);
 insert into company(nombre, direccion, edad, nomina) values('AirBnB', 'direccion 4', 100, NULL);
 insert into company(nombre, direccion, edad, nomina) values(NULL, 'direccion 4', 100, 50);
+
+--------------------------------------------------------------------------------
+
+create database transacciones;
+\c transacciones;
+
+create table cuentas 
+(numero_cuenta int not null unique primary key, balance float check(balance >= 0.00));
+
+insert into cuentas (numero_cuenta, balance) values (1, 1000);
+insert into cuentas (numero_cuenta, balance) values (2, 1000);
+
+begin transaction;
+UPDATE cuentas set balance = balance - 1000 where numero_cuenta = 1;
+UPDATE cuentas set balance = balance + 1000 where numero_cuenta = 2;
+commit;
+
+insert into cuentas (numero_cuenta, balance) values (3, 1000);
+
+begin transaction;
+UPDATE cuentas set balance = balance - 1000 where numero_cuenta = 3;
+UPDATE cuentas set balance = balance + 1000 where numero_cuenta = 1;
+
+select * from cuentas;
+
+rollback;

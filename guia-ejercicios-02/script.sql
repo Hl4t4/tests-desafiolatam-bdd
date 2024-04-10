@@ -176,3 +176,4 @@ select * from destinos;
 ALTER TABLE Destinos
 DROP COLUMN ciudad,
 DROP COLUMN pais;
+
