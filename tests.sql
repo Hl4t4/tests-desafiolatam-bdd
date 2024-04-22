@@ -302,3 +302,18 @@ ALTER TABLE phones ALTER COLUMN id SET DEFAULT nextval('public."id_seq"');
 
 select COUNT(id),  from peliculas where "Director" = 'Peter Jackson';
 select COUNT(id), "Pelicula", "Año estreno"  from peliculas where "Director" = 'Peter Jackson';
+
+-------------------------------------------------------------------------------- d10
+
+
+create database Productos_feria;
+\c productos_feria;
+
+\i E:/proyectos/bootcamp/tests-desafiolatam-bdd/script_clientes_productos.sql;
+
+\i E:/proyectos/bootcamp/tests-desafiolatam-bdd/script_clientes_productos.sql;
+
+
+select * from clientes;
+select * from productos;
+select * from compras;
