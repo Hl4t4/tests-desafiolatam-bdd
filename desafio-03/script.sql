@@ -3,8 +3,8 @@
 CREATE DATABASE peliculas;
 \c peliculas;
 
-CREATE DATABASE peliculas_testing;
-\c peliculas_testing;
+-- CREATE DATABASE peliculas_testing;
+-- \c peliculas_testing;
 
 -- Punto 2
 
