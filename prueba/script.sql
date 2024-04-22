@@ -1,8 +1,8 @@
-CREATE DATABASE prueba_m5_jose_latapiatt;
+CREATE DATABASE desafio_m5_jose_latapiatt;
 \c desafio_m5_jose_latapiatt;
 
-create DATABASE prueba5_test;
-\c prueba5_test;
+-- create DATABASE prueba5_test;
+-- \c prueba5_test;
 
 -- Punto 1
 
@@ -139,7 +139,7 @@ GROUP BY Preguntas.pregunta;
 
 -- Punto 8
 
-\d Usuarios
+\d Respuestas
 
 ALTER TABLE Respuestas 
 DROP CONSTRAINT respuestas_usuario_id_fkey,
@@ -148,7 +148,7 @@ ADD CONSTRAINT respuestas_usuario_id_fkey
     REFERENCES Usuarios (usuario_id)
     ON DELETE CASCADE;
 
-\d Usuarios
+\d Respuestas
 
 DELETE FROM Usuarios 
 WHERE usuario_id = 1;
